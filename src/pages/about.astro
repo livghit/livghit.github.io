@@ -1,0 +1,32 @@
+---
+import Layout from '../layouts/BlogPost.astro';
+
+const today = new Date();
+const careerStartDate = new Date("2022-09-01");
+---
+
+<Layout
+        title="About Me"
+        description="Some interesting thigs about me !"
+        pubDate={new Date('August 08 2021')}
+        heroImage="/blog-placeholder-about.jpg"
+>
+
+    <p>
+        Fullstack Software Developer with {today.getFullYear() - careerStartDate.getFullYear()}+ years of hands-on
+        experience in building and maintaining web applications
+        using PHP (Laravel), React.js, Vue.js, and Python.
+    </p>
+    <p>
+        Motivated by a passion for problem-solving and continuous
+        learning, I consistently work to improve my programming skills in my free time. Known for my strong teamwork
+        and communication abilities, I thrive in collaborative environments, but I’m also able to work independently and
+        find solutions on my own.
+    </p>
+    <p>
+        Eager to take on new challenges, I am committed to delivering high-quality solutions
+        that drive innovation and efficiency in software development.
+    </p>
+
+    <p>NOT GOING TO LIE ASTRO IS KINDA COOL BTW!</p>
+</Layout>

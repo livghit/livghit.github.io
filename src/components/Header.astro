@@ -1,0 +1,84 @@
+---
+import HeaderLink from './HeaderLink.astro';
+import {SITE_TITLE} from '../consts';
+import Discord from "./icons/Discord.astro";
+import GitHub from "./icons/GitHub.astro";
+---
+
+<header>
+    <nav>
+        <h2><a href="/">{SITE_TITLE}</a></h2>
+        <div class="internal-links">
+            <HeaderLink href="/">Home</HeaderLink>
+            <HeaderLink href="/blog">Blog</HeaderLink>
+            <HeaderLink href="/about">About</HeaderLink>
+            <HeaderLink href="/use">Uses</HeaderLink>
+        </div>
+        <div class="social-links">
+            <a href="#" target="_blank">
+                <Discord/>
+            </a>
+            <a href="#" target="_blank">
+                <span class="sr-only">Take a look on GitHub</span>
+                <GitHub/>
+            </a>
+        </div>
+    </nav>
+</header>
+<style>
+    header {
+        margin: 0 13rem;
+        padding: 0 1em;
+        background: rgba(0, 0, 0, 60%);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 2px 8px rgba(var(--black), 5%);
+        position: sticky;
+        border-radius: 5rem;
+        top: 10px;
+        right: 0;
+        left: 0;
+    }
+
+    h2 {
+        margin: 0;
+        font-size: 1em;
+    }
+
+    h2 a,
+    h2 a.active {
+        text-decoration: none;
+    }
+
+    nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    nav a {
+        padding: 0.5em 0.5em;
+        color: var(--white);
+        border-bottom: 4px solid transparent;
+        text-decoration: none;
+    }
+
+    nav a.active {
+        text-decoration: none;
+        border-bottom-color: #6C63FF;
+    }
+
+    .social-links,
+    .social-links a {
+        display: flex;
+    }
+
+    @media (max-width: 720px) {
+        .social-links {
+            display: none;
+        }
+
+        header {
+            margin: 2rem;
+        }
+    }
+</style>

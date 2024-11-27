@@ -1,0 +1,91 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import {SITE_TITLE, SITE_DESCRIPTION} from '../consts';
+import Website from "../components/illustrations/Website.astro";
+---
+
+<!doctype html>
+<html lang="en">
+<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION}/>
+<body class="text-fade-in">
+<Header/>
+<main>
+    <section>
+        <div class="flex-and-mid">
+            <h1 class="text-7xl text-fade-in"><span class="wavy">Full-stack developer </span> and aspiring entrepreneur.
+            </h1>
+            <p class="text-neutral-500 text-fade-in">Hi there! I'm Liviu Ghita from Germany, and I like to build things
+                .
+                I'm currently building NotifyHub (more about this <a href="/blog/notify-hub" class="underline">here</a>)
+                , and also
+                work full-time as a Software
+                Developer.</p>
+        </div>
+    </section>
+</main>
+</body>
+</html>
+
+<style scoped>
+    section {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 5rem;
+        min-height: 80vh;
+    }
+
+    .flex-and-mid {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .text-neutral-500 {
+        --tw-text-opacity: 1;
+        color: rgb(115 115 115 / var(--tw-text-opacity));
+    }
+
+    .text-7xl {
+        font-size: 4.5rem /* 72px */;
+        line-height: 1;
+    }
+
+    @media only screen and (max-width: 600px) {
+        section {
+            padding: 10px;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+    }
+
+    .svg-container {
+        width: 100%;
+        height: 100%;
+    }
+
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .text-fade-in {
+        opacity: 0; /* Start invisible */
+        animation: fadeIn 1s ease-in-out forwards; /* Adjust duration and easing */
+    }
+
+    .wavy {
+        text-decoration: underline;
+        -webkit-text-decoration-color: #6C63FF;
+        text-decoration-color: #6C63FF;
+        -webkit-text-decoration-style: wavy;
+        text-decoration-style: wavy;
+    }
+</style>

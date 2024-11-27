@@ -1,0 +1,41 @@
+---
+import Layout from '../layouts/BlogPost.astro';
+---
+
+<Layout
+        title="Tools I use everyday as a Software Developer"
+        description="Everything about the tools I use as a Developer."
+        pubDate={new Date('Nov 15 2024')}
+>
+    <div class="card-container">
+        <div class="card">
+            <p>Macbook pro m2 14</p>
+        </div>
+        <div class="card">
+            <p>Logitech MX Keys S</p>
+        </div>
+        <div class="card">
+            HP 27 Screen
+        </div>
+        <div class="card">
+            PHPStorm
+        </div>
+        <div class="card">
+            NeoVim
+        </div>
+    </div>
+</Layout>
+<style>
+    .card-container {
+        overflow-x: scroll;
+        display: grid;
+        grid-template-columns: repeat(3, 0.5fr);
+        gap: 5rem;
+        min-height: 80vh;
+    }
+
+    .card {
+        border: 1px solid var(--accent);
+        border-radius: 10px;
+    }
+</style>
